@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const Shopping = () => {
+const Shopping = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.mainContainer}>
@@ -37,7 +37,10 @@ const Shopping = () => {
         </View>
 
         <View style={styles.skipView}>
-          <TouchableOpacity style={styles.skip}>
+          <TouchableOpacity
+            style={styles.skip}
+            onPress={() => navigation.navigate("cart")}
+          >
             <Text style={styles.skipText}>Previous</Text>
           </TouchableOpacity>
           <View style={styles.pages}>

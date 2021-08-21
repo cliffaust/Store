@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const Shopping = () => {
+const Shopping = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.mainContainer}>
@@ -31,13 +31,19 @@ const Shopping = () => {
         </View>
 
         <View style={styles.btnBox}>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("payment")}
+            style={styles.btn}
+          >
             <Text style={styles.btnText}>Next</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.skipView}>
-          <TouchableOpacity style={styles.skip}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("shopping")}
+            style={styles.skip}
+          >
             <Text style={styles.skipText}>Previous</Text>
           </TouchableOpacity>
           <View style={styles.pages}>
@@ -45,7 +51,10 @@ const Shopping = () => {
             <View style={styles.currentPage}></View>
             <View style={styles.page}></View>
           </View>
-          <TouchableOpacity style={styles.skip}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("payment")}
+            style={styles.skip}
+          >
             <Text style={styles.skipText}>Skip</Text>
           </TouchableOpacity>
         </View>
